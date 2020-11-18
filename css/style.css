@@ -11,25 +11,36 @@
 .header {
   width: 100%;
   height: 70px;
-  background-color: #000;
+  background-color: gray;
 }
 
 .container {
+  height: 100%;
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
   padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .burger-menu {
+  display: none;
   width: 40px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   overflow: hidden;
-  position: relative;
-  top: 0;
-  left: 0;
+  position: absolute;
+  top: 15px;
+  right: 15px;
   cursor: pointer;
 }
 
@@ -84,19 +95,85 @@
   margin: -2px 0 -9px 0;
 }
 
-.nav {
-  width: 0;
+.mob-nav.show {
+  min-width: 300px;
+  height: 100%s;
   background-color: red;
-  -webkit-transform: translateX(20);
-          transform: translateX(20);
+  position: absolute;
+  top: 70px;
+  right: 0;
 }
 
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+  font-family: 'OpenSans','Areal';
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.menu.mob {
+  width: 0;
+  height: 100%;
+  padding: 20px 10px;
+  background-color: orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: -100%;
+  -webkit-transition: all .5s ease 0s;
+  transition: all .5s ease 0s;
+}
+
+.menu.mob.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 320px;
+  right: 0;
+  top: 70px;
+}
+
+.menu-item {
+  padding: 1em 2em;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menu-item.mob + .menu-item.mob {
+  margin: 20px 0 0 0;
+}
+
+.menu-item.decktop + .menu-item.decktop {
+  margin: 0 0 0 20px;
+}
+
+@media (max-width: 900px) {
+  .menu.decktop {
+    display: none;
+  }
+  .burger-menu {
+    display: block;
+  }
 }
