@@ -95,24 +95,22 @@
     font-size: 24px;
     text-transform: uppercase;
     &.mob{
-        width: 0;
+        width: 320px;
         height: 100%;
         padding: 20px 10px;
         background-color: orange;
 
-        display: flex;
+        display: none;
         justify-content: flex-start;
         flex-direction: column;
 
-        position: absolute;
+        position: fixed;
         top: 70px;
-        right: -100%;
+        right: 0;
+        transform: translateX(100%);
         transition: all .5s ease 0s;
         &.show{
-            display: flex;
-            min-width: 320px;
-            right: 0;
-            top: 70px;
+            transform: translateX(0%);
         }
     }
 }
@@ -132,12 +130,15 @@
 }
 
 
-@media(max-width:900px){
+@media(max-width:1100px){
     .menu.decktop{
         display: none;
     }
     .burger-menu{
         display: block;
+    }
+    .menu.mob{
+        display: flex;
     }
 
 }
