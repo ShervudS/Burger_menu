@@ -21,6 +21,8 @@
     justify-content: center;
     align-items: center;
 }
+
+    // burger icon
 .burger-menu{
     display: none;
     width: 40px;
@@ -35,6 +37,8 @@
     right: 15px;
     cursor: pointer;
 }
+
+    // burger menu line
 .burger-line{
     display: block;
     width: 30px;
@@ -77,15 +81,7 @@
     }
 }
     // MENU
-.mob-nav.show{
-    min-width: 300px;
-    height: 100%s;
-    background-color:red;
-    position: absolute;
-    top: 70px;
-    right: 0;
-
-}
+    // desktop version
 .menu{   
     display: flex;
     align-items: center;
@@ -94,6 +90,8 @@
     font-family: 'OpenSans','Areal';
     font-size: 24px;
     text-transform: uppercase;
+
+    // mobile version menu
     &.mob{
         width: 320px;
         height: 100%;
@@ -114,9 +112,10 @@
         }
     }
 }
+    // item menu
 .menu-item{
-    padding: 1em 2em;
     cursor: pointer;
+    padding: 1em 2em;
     background-color: transparent;
     &:hover{
         background-color: rgba( transparent, 0.2)
@@ -131,12 +130,15 @@
 
 
 @media(max-width:1100px){
+    // hide desktop menu in mobile version
     .menu.decktop{
         display: none;
     }
+    // show burger menu icon
     .burger-menu{
         display: block;
     }
+    // hide mobile menu in desktop vervion
     .menu.mob{
         display: flex;
     }

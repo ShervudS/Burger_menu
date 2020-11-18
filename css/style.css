@@ -95,15 +95,6 @@
   margin: -2px 0 -9px 0;
 }
 
-.mob-nav.show {
-  min-width: 300px;
-  height: 100%s;
-  background-color: red;
-  position: absolute;
-  top: 70px;
-  right: 0;
-}
-
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -148,8 +139,8 @@
 }
 
 .menu-item {
-  padding: 1em 2em;
   cursor: pointer;
+  padding: 1em 2em;
   background-color: transparent;
 }
 
